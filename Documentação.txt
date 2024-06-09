@@ -1,0 +1,26 @@
+O sistema utiliza XAMPP para permitir cadastros,edição e exclusão de usuários pelo sistema além de login.
+
+Usuário para login: teste.silva / senha: 123456789
+
+Os seguintes arquivos da pasta C:/xampp/phpMyAdmin compõem o sistema:
+
+* db_connect.php --> Cria e verifica a conexão com o banco de dados 'user_management'
+
+* register.php --> Constitui a página formulário de cadastro que exige Nome,telefone,email,senha(exigindo 8 caracteres no mínimo)
+CEP(verificado pela API ViaCEP), endereço(automaticamente preenchido caso detectado cep válido) e Status(entre ativo e inativo).
+O sistema irá gerar um nome de usuário baseado no nome completo ao completar o cadastro. Caso o usuário já possua uma conta, a página
+possui um link que leva a página 'login.php'
+
+* login.php --> Constitui a página formulário de login que exige preenchimento dos espaços:
+
+'Nome de usuário ou email' (o banco de dados verifica ambos os registros de nome de usuário ou email para o login)
+'Senha' (o banco de dados criptografa o conteúdo da coluna de senha automaticamente ao consultar diretamente o db)
+Caso o usuário ainda não possua uma conta, a página possui um link que leva a página 'register.php'
+
+* dashboard.php --> Ao logar, o usuário é levado a esta página que lista os usuários cadastrados exceto a senha por questões de 
+segurança e dá a opção de editar ou excluir os registros.
+
+* edit.php --> permite a edição de todos os espaços de registro de um usuário.
+
+* delete.php --> exclui o registro de usuário selecionado.
+
